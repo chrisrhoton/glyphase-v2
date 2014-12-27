@@ -10,7 +10,40 @@
             draggable: false,
             center: new google.maps.LatLng(37.794108,-122.39511),
             zoom: 16,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            styles: [
+              {
+                "elementType": "labels",
+                "stylers": [
+                  { "visibility": "off" }
+                ]
+              },{
+                "featureType": "administrative",
+                "elementType": "labels",
+                "stylers": [
+                  { "visibility": "on" }
+                ]
+              },{
+                "featureType": "road",
+                "elementType": "labels",
+                "stylers": [
+                  { "visibility": "on" }
+                ]
+              },{
+                "featureType": "transit",
+                "elementType": "labels",
+                "stylers": [
+                  { "visibility": "on" }
+                ]
+              },{
+                "featureType": "poi.park",
+                "stylers": [
+                  { "hue": "#22ff00" },
+                  { "saturation": -48 },
+                  { "lightness": -10 }
+                ]
+              }
+            ]
         }
 
         function template(title, author, highlight) {
