@@ -1,0 +1,1102 @@
+@charset "UTF-8";
+/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden; }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+  overflow-x: hidden; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.glyphComments-list, .glyphInfo-permissions, .nav-links, .nav-mobileLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.glyphHeader-image::after {
+  background: -moz-linear-gradient(top, rgba(73, 73, 71, 0) 0%, rgba(73, 73, 71, 0.8) 50%, #494947 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(73, 73, 71, 0)), color-stop(50%, rgba(73, 73, 71, 0.8)), color-stop(100%, #494947));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(73, 73, 71, 0) 0%, rgba(73, 73, 71, 0.8) 50%, #494947 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(73, 73, 71, 0) 0%, rgba(73, 73, 71, 0.8) 50%, #494947 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(73, 73, 71, 0) 0%, rgba(73, 73, 71, 0.8) 50%, #494947 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(73, 73, 71, 0) 0%, rgba(73, 73, 71, 0.8) 50%, #494947 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00494947', endColorstr='#494947',GradientType=0 );
+  /* IE6-9 */ }
+
+body, html {
+  font-size: 14px; }
+
+body {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  margin: 0 auto;
+  color: #494947;
+  font-family: "pt-sans", Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
+a {
+  text-decoration: none;
+  color: #494947; }
+
+h1 {
+  font-size: 3.125rem;
+  line-height: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem; }
+
+h2 {
+  font-size: 2.3125rem;
+  line-height: 1;
+  margin-top: 4rem;
+  margin-bottom: 2rem; }
+
+h3 {
+  font-size: 1.6875rem;
+  line-height: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+
+p, ul, ol, pre, table, blockquote {
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+
+/* Sanitation */
+hr {
+  border: 1px solid;
+  margin: -1px 0; }
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+b, strong, em, small, code {
+  line-height: 1; }
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em; }
+
+sub {
+  top: 0.4em; }
+
+.action {
+  text-align: right;
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 1em;
+  padding-right: 0;
+  box-sizing: border-box; }
+
+.action-primary {
+  border: 2px solid #ddddd9;
+  border-radius: 2em; }
+  .action-primary:hover {
+    border-color: #494947; }
+
+.action-secondary {
+  opacity: 0.3; }
+  .action-secondary:hover {
+    opacity: 1; }
+
+.action-primary.addHeader {
+  margin-top: .75em;
+  float: right;
+  display: block;
+  position: relative; }
+
+.action-primary, .action-secondary, .glyphComments-actionSecondary {
+  font-size: 0.96154rem;
+  padding: .5em 1.2em;
+  transition: all .2s ease; }
+  .action-primary:hover, .action-secondary:hover, .glyphComments-actionSecondary:hover {
+    transition: all .2s ease;
+    cursor: pointer; }
+  .action-primary:active, .action-secondary:active, .glyphComments-actionSecondary:active {
+    color: #1fc0ef;
+    border-color: #1fc0ef; }
+
+.button, .button-secondary {
+  font-size: 1.25rem;
+  padding: 1.25rem 2.3125rem;
+  background-color: #f95b3e;
+  color: white;
+  border-radius: 4px;
+  outline: 0;
+  border: 2px solid #ddddd9;
+  margin-top: 1.25rem; }
+  .button:hover, .button-secondary:hover {
+    background-color: #f95334; }
+  .button:active, .button-secondary:active {
+    border-color: #f95b3e; }
+
+.button-secondary {
+  background-color: transparent;
+  color: #494947; }
+  .button-secondary:hover {
+    background-color: transparent;
+    border-color: rgba(73, 73, 71, 0.5); }
+  .button-secondary:active {
+    color: #1fc0ef;
+    background-color: transparent;
+    border-color: #1fc0ef; }
+
+.button-secondary.tip {
+  width: 20vw; }
+  .button-secondary.tip::before {
+    content: "$";
+    opacity: 0.2;
+    font-weight: bold;
+    margin-right: 0.625rem; }
+
+.button.saveGlyph, .saveGlyph.button-secondary {
+  float: right; }
+
+.footer {
+  display: block;
+  float: left;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  margin-top: 12.5rem;
+  padding-top: 3.75rem;
+  background-color: #f3f3f2;
+  color: #494947;
+  height: 5rem;
+  text-align: center; }
+
+.glyphHeader-image {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 70%;
+  height: 70vh;
+  background: image-url("parkour.jpg") no-repeat center;
+  background-size: cover;
+  overflow-x: hidden; }
+  .glyphHeader-image::after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 10rem;
+    opacity: 0.7; }
+
+.glyphHeader-create {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 14rem;
+  background-color: rgba(221, 221, 217, 0); }
+
+.glyphHeader-like {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 0rem;
+  top: 1rem;
+  background: image-url("like.svg") no-repeat center;
+  background-size: 1.5rem;
+  opacity: 0.3;
+  border: 2px solid white;
+  padding: 1rem;
+  border-radius: 4px; }
+  .glyphHeader-like:hover {
+    cursor: pointer;
+    opacity: 1; }
+  .glyphHeader-like.is-liked {
+    border-color: transparent;
+    opacity: 1; }
+
+.glyphSidebar {
+  float: left;
+  width: 25%;
+  padding-left: 5%;
+  height: 100%;
+  position: relative;
+  top: -7.5rem; }
+
+.glyphSidebar-location {
+  height: 20vw;
+  width: 20vw;
+  border: 2px solid #ddddd9;
+  border-radius: 4px; }
+
+.glyphInfo, .glyphContent {
+  float: left;
+  width: 70%;
+  position: relative;
+  top: -7.5rem;
+  max-width: 40rem; }
+
+.glyphInfo-text {
+  color: white; }
+
+.glyphInfo-textTitle {
+  font-size: 3.125rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0; }
+
+.glyphInfo-textCreator {
+  opacity: 0.3; }
+
+.glyphInfo-heading {
+  margin-top: 3.125rem;
+  max-width: 40rem; }
+
+.glyphInfo-content {
+  max-width: 40rem; }
+
+.glyphComments {
+  max-width: 40rem; }
+
+.glyphComments-list {
+  display: block;
+  float: left;
+  width: 100%; }
+
+.glyphComments-item {
+  height: auto;
+  float: left;
+  display: block;
+  position: relative;
+  margin-left: 5rem; }
+
+.glyphComments-authorImage {
+  width: 4.625rem;
+  height: 4.625rem;
+  margin-left: -5rem;
+  float: left;
+  background: image-url("prof.png") no-repeat center;
+  background-size: cover;
+  border-radius: 4px;
+  border: 2px solid #ddddd9; }
+
+.glyphComments-author {
+  float: left;
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+  opacity: 0.3; }
+
+.glyphComments-content {
+  float: left;
+  margin-top: 0;
+  padding-left: 1.25rem; }
+
+.glyphComments-add {
+  display: block;
+  width: 100%;
+  float: left;
+  margin: 3.125rem 0; }
+
+.glyphComments-addPrompt {
+  font-weight: normal; }
+
+.glyphComments-addInput {
+  width: 100%;
+  resize: none;
+  border: 2px solid #ddddd9; }
+
+.glyphContent {
+  max-width: 40rem; }
+
+.glyphSidebar-address {
+  z-index: 3;
+  width: 20vw;
+  color: #494947;
+  line-height: 1; }
+
+.glyphSidebar-addressLabel {
+  display: block;
+  margin-top: 1.25rem;
+  opacity: 0.3;
+  font-weight: bold;
+  padding: 1.25rem;
+  font-size: 0.96154rem; }
+
+.glyphSidebar-addressContent {
+  padding: 0 1.25rem;
+  font-style: normal;
+  line-height: 1.2;
+  font-size: 1.25rem; }
+
+.glyphInfo-addHeader {
+  display: block;
+  width: 100%; }
+
+.glyphInfo.create, .create.glyphContent {
+  margin-bottom: 2rem; }
+
+.glyphInfo-permissions {
+  display: inline-block;
+  float: left;
+  padding: 1rem 0; }
+
+.input-dropdown {
+  width: auto; }
+
+.homeContent {
+  max-width: 40rem;
+  margin: auto;
+  text-align: center; }
+
+.homeContent-tagline {
+  opacity: 0;
+  transition: all .5s ease;
+  opacity: 1; }
+
+.icon-photo {
+  background: image-url("photo.svg") no-repeat center;
+  background-size: 1.75rem;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  opacity: 0.3; }
+
+.input, .input-text, .input-text--large, .input-textbox {
+  border-radius: 4px;
+  border: 2px solid #ddddd9;
+  padding: 1rem;
+  outline: none;
+  width: 100%;
+  margin-top: 1.25rem;
+  box-sizing: border-box;
+  box-shadow: none; }
+  .input:hover, .input-text:hover, .input-text--large:hover, .input-textbox:hover {
+    border-color: rgba(73, 73, 71, 0.5); }
+  .input:active, .input-text:active, .input-text--large:active, .input-textbox:active {
+    border-color: #1fc0ef; }
+  .input:focus, .input-text:focus, .input-text--large:focus, .input-textbox:focus {
+    border-color: #1fc0ef; }
+
+.input-text--large {
+  margin-top: 0;
+  font-size: 3.125rem; }
+
+.input-textbox {
+  resize: none;
+  height: 4rem;
+  padding-bottom: 3rem; }
+  .input-textbox:active {
+    border-color: #1fc0ef; }
+  .input-textbox:focus {
+    border-color: #1fc0ef; }
+
+.input-textboxActions {
+  display: block;
+  float: left;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  margin: 1em 0; }
+
+.input-textboxAction {
+  display: inline-block; }
+
+.input-textboxAction--photo, .input-textboxAction--video {
+  background: image-url("photo.svg") no-repeat center;
+  background-size: 1.75rem;
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.3;
+  display: inline-block;
+  position: relative;
+  top: .45em; }
+  .input-textboxAction--photo:hover, .input-textboxAction--video:hover {
+    opacity: 1;
+    cursor: pointer; }
+
+.input-textboxAction--video {
+  background: image-url("video.svg") no-repeat center;
+  background-size: 1.75rem; }
+
+.input-label {
+  display: block;
+  margin-top: 1.25rem; }
+
+.label-inline {
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: .7em;
+  letter-spacing: .1em;
+  font-weight: bold;
+  opacity: 0.3; }
+
+.input-dropdown {
+  font-size: 1.25rem;
+  height: 3.375rem;
+  min-width: 9.375rem;
+  display: inline-block;
+  background-color: transparent;
+  background: image-url("caret.png") no-repeat center right;
+  background-size: 28px;
+  border: 2px #ddddd9 solid;
+  outline: 0;
+  -webkit-appearance: none;
+  padding-left: .8em; }
+  .input-dropdown:hover {
+    border-color: rgba(73, 73, 71, 0.5);
+    cursor: pointer; }
+  .input-dropdown:active {
+    border-color: #1fc0ef; }
+
+@media screen and (max-width: 800px) {
+  .glyphHeader-image {
+    height: 18rem; }
+
+  .glyphSidebar {
+    width: 90%;
+    min-height: 12.5rem;
+    height: auto; }
+
+  .glyphSidebar-location {
+    min-height: 12.5rem;
+    width: 100%; }
+
+  .glyphSidebar-address {
+    width: 100%; }
+
+  .button-secondary.tip {
+    margin-bottom: 3.125rem;
+    width: 100%; }
+
+  .tip.desktop {
+    display: none; }
+
+  .glyphInfo, .glyphContent {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    box-sizing: border-box; }
+
+  .glyphInfo-text {
+    color: #494947; }
+
+  .glyphHeader-like {
+    background: image-url("like-dark.svg") no-repeat center;
+    background-size: 1rem;
+    border-color: #494947;
+    right: 1rem;
+    top: 2rem; }
+
+  .action {
+    padding: 0;
+    padding-bottom: 2rem; }
+
+  .action-primary,
+  .action-secondary {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center; }
+
+  .nav-link .action-primary, .nav-link--action .action-primary {
+    display: inline; }
+
+  .input-text--large {
+    margin-top: 1.6875rem;
+    font-size: 1.6875rem; }
+
+  .glyphInfo.create, .create.glyphContent {
+    margin-bottom: 0; }
+
+  .button.saveGlyph, .saveGlyph.button-secondary {
+    width: 100%; }
+
+  .action-primary.addHeader {
+    margin-bottom: 2rem; }
+
+  .input-textboxActions {
+    text-align: center; }
+
+  .homeContent {
+    padding: 1rem; }
+
+  .homeContent-tagline {
+    margin-top: 0; }
+
+  #map-canvas {
+    height: 30rem; }
+
+  .glyphSidebar-location {
+    position: relative; }
+
+  #map-canvas.single {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: hidden; }
+
+  .map-item.feature {
+    top: 18rem; }
+
+  .nav-brand {
+    background: image-url("logo-full.png") no-repeat center;
+    background-size: 10rem; }
+
+  .nav-links {
+    display: none; }
+
+  input, textarea {
+    -webkit-appearance: none;
+    box-shadow: none; }
+
+  .action {
+    margin: 3.125rem 0; } }
+@media screen and (min-width: 800px) {
+  .nav-mobile {
+    display: none; }
+
+  .nav-mobile-icon {
+    display: none; }
+
+  .tip.mobile {
+    display: none; } }
+.map {
+  position: relative;
+  text-align: center; }
+
+.map-item {
+  font-family: "pt-sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  position: absolute;
+  display: block;
+  z-index: 1;
+  min-height: 6rem;
+  min-width: 300px;
+  text-align: left;
+  font-size: 0.96154rem;
+  border: 2px solid #ddddd9;
+  background-color: white;
+  color: #494947;
+  border-radius: 2px; }
+  .map-item:hover {
+    cursor: pointer;
+    border-color: #ffd41f; }
+  .map-item:active {
+    border-color: #1fc0ef; }
+
+.map-itemImage {
+  background: image-url("parkour.jpg") no-repeat center;
+  background-size: cover;
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  width: 33%;
+  left: 0;
+  border-radius: 4px 0 0 4px; }
+
+.map-itemContent {
+  font-family: "pt-sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-align: left;
+  margin-left: 35%;
+  padding: 0.96154rem;
+  line-height: 1.6; }
+
+.map-itemTitle {
+  font-size: 1.25rem;
+  font-weight: bold; }
+
+.map-itemCreator {
+  display: block;
+  opacity: 0.5;
+  margin-bottom: 0; }
+
+.map-itemInfo {
+  display: block;
+  height: 1.6rem;
+  overflow-y: hidden;
+  position: relative;
+  padding-left: 1.04167rem;
+  color: #494947;
+  font-style: italic; }
+  .map-itemInfo::before {
+    content: "“";
+    font-size: 2em;
+    width: 2.2em;
+    position: absolute;
+    left: 0;
+    top: -.1em;
+    opacity: 0.2; }
+  .map-itemInfo::after {
+    content: "";
+    opacity: .9;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1.7rem;
+    width: 80%;
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 28%, white 47%, white 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(28%, rgba(255, 255, 255, 0.5)), color-stop(47%, white), color-stop(100%, white));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 28%, white 47%, white 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 28%, white 47%, white 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 28%, white 47%, white 100%);
+    /* IE10+ */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 28%, white 47%, white 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+    /* IE6-9 */ }
+
+.map-addGlyph {
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+  position: relative;
+  top: -3.125rem; }
+
+#map-canvas {
+  width: 100%;
+  height: 80%;
+  height: 80vh; }
+
+#map-canvas.single {
+  display: block;
+  height: 100%;
+  width: 100%; }
+
+.gm-style-iw {
+  width: 300px !important;
+  left: 0 !important;
+  top: 0 !important;
+  height: 100% !important; }
+
+.nav {
+  transition: all .2s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  background-color: rgba(243, 243, 242, 0.95);
+  height: 4rem; }
+
+.nav-brand {
+  float: left;
+  margin: 0;
+  width: 10rem;
+  height: 100%;
+  background: image-url("logo-full.png") no-repeat center;
+  background: image-url("logo-full.svg") no-repeat center;
+  background-size: 10rem;
+  margin-left: .75rem; }
+  .nav-brand:hover {
+    cursor: pointer; }
+
+.nav-links {
+  float: right; }
+
+.nav-link, .nav-link--action {
+  transition: all .2s ease;
+  line-height: 4rem;
+  font-size: 0.96154rem;
+  padding: 0 2.3125rem;
+  display: inline-block; }
+
+.nav-link--action {
+  padding: 0;
+  padding-right: 1.5em; }
+
+.nav-linkText {
+  font-weight: bold;
+  color: #494947; }
+
+.nav-mobileLink {
+  width: 100%;
+  padding: 1em;
+  border-bottom: 1px solid rgba(73, 73, 71, 0.05);
+  font-weight: bold; }
+  .nav-mobileLink:hover {
+    cursor: pointer; }
+  .nav-mobileLink:active {
+    background-color: #f7ca0a; }
+  .nav-mobileLink:last-child {
+    border-bottom: none; }
+
+.nav-mobile-icon {
+  -webkit-user-select: none;
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  right: 0;
+  top: 0;
+  width: 6rem;
+  text-align: center;
+  background: image-url("menu.svg") no-repeat center;
+  background-size: 1rem; }
+  .nav-mobile-icon:hover {
+    cursor: pointer; }
+
+.nav-mobile {
+  transition: top .5s ease;
+  display: block;
+  position: fixed;
+  top: -100%;
+  height: auto;
+  width: 100%;
+  background-color: rgba(255, 212, 31, 0.96);
+  color: white;
+  z-index: 2; }
+
+.nav-mobile.is-selected {
+  transition: top .2s ease;
+  top: 4rem; }
+
+.is-shrunk {
+  transition: all .2s ease;
+  line-height: 3rem;
+  background-size: 9rem;
+  margin-left: 0rem; }
+  .is-shrunk::before {
+    transition: all .2s ease;
+    margin-top: .7rem; }
+
+.is-nav-shrunk {
+  transition: all .2s ease;
+  height: 3rem; }
+
+.is-blurred {
+  -webkit-filter: blur(6px); }
+
+.is-adding-comment .button-secondary.tip.mobile {
+  display: none; }
+.is-adding-comment .action-primary.report {
+  display: none; }
