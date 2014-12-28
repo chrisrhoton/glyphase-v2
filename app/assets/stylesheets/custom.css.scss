@@ -1,0 +1,13 @@
+#error_explanation {
+  color: #EE3300;
+  text-align: left;
+  ul {
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  .input-text {
+    border-color: #EE3300;
+  }
+}

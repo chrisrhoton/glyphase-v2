@@ -1,0 +1,12 @@
+<% provide(:title, @user.username) %>
+<section class="glyphHeader-create">
+</section>
+<section class="glyphSidebar">
+
+  <li class="glyphComments-item">
+    <%= gravatar_for @user %>
+    <aside class="glyphComments-author"><%= @user.username %></aside>
+  </li>
+</section>
+<section class="glyphInfo">
+</section>

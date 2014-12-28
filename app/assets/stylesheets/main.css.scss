@@ -265,7 +265,9 @@ input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
-  /* 3 */ }
+  /* 3 */ 
+  background-color: #fff;
+}
 
 /**
  * Re-set default cursor for disabled elements.
