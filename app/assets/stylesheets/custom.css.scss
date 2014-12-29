@@ -1,3 +1,49 @@
+/** Link styling **/
+
+.feature-Link {
+  font-weight: bold;
+  color: #f7ca0a;
+}
+
+/** Form elements **/
+
+.login-form {
+  text-align: left;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 5px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 2px solid #ddddd9 !important;
+  padding: 6px !important;
+  margin-top: 20px !important;
+  margin-left: 2px !important;
+  width: auto;
+  margin-left: 0;
+}
+
+#session_remember_me:checked {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #f7ca0a !important;
+  color: #99a1a7 !important;
+  padding: 6px !important;
+  border: 2px solid #adb8c0 !important;
+}
+
+/** Error messages **/
+
 #error_explanation {
   color: #a94442;
   text-align: left;

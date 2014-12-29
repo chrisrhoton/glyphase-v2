@@ -1,7 +1,29 @@
   <header class="banner"></header>
 
-  <nav class="nav">
+<% if logged_in? %>
 
+  <nav class="nav">
+    <%= link_to root_path, class: "current" do %>
+      <h1 class="nav-brand"></h1>
+    <% end %>
+    <ul class="nav-links">
+      <li class="nav-link">
+        <%= link_to "Logout", logout_path, class: "nav-linkText", method: "delete" %>
+      </li>
+    </ul>
+  <div class="nav-mobile-icon"></div>
+  </nav>
+
+  <div class="nav-mobile">
+    <ul class="nav-mobileLinks">
+      <li class="nav-mobileLink">
+        <a class="nav-mobileLinkText">Logout</a>
+      </li>
+    </ul>
+  </div>
+
+<% else %>
+  <nav class="nav">
     <%= link_to root_path, class: "current" do %>
       <h1 class="nav-brand"></h1>
     <% end %>
@@ -10,7 +32,7 @@
         <%= link_to "Signup", signup_path, class: "nav-linkText" %>
       </li>
       <li class="nav-link">
-        <a class="nav-linkText" href="#">Login</a>
+        <%= link_to "Login", login_path, class: "nav-linkText" %>
       </li>
     </ul>
   <div class="nav-mobile-icon"></div>
@@ -26,3 +48,4 @@
       </li>
     </ul>
   </div>
+<% end %>

@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  match '/signup', to: 'users#new', via: 'get'
+  get       '/signup'   => 'users#new'
+  get       'login'     => 'sessions#new'
+  post      'login'     => 'sessions#create'
+  delete    'logout'    => 'sessions#destroy'
   
 end
