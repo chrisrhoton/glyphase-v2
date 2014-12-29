@@ -25,39 +25,17 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
 </head>
+
 <body class="home">
 
 <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
+  <%= render 'layouts/header' %>
 
-  <header class="banner"></header>
-
-  <nav class="nav">
-    <a class='current' href="index.html">
-      <h1 class="nav-brand"></h1>
-    </a>
-    <ul class="nav-links">
-      <li class="nav-link">
-        <a class="nav-linkText" href="#">Signup</a>
-      </li>
-      <li class="nav-link">
-        <a class="nav-linkText" href="#">Login</a>
-      </li>
-    </ul>
-  <div class="nav-mobile-icon"></div>
-  </nav>
-
-  <div class="nav-mobile">
-    <ul class="nav-mobileLinks">
-      <li class="nav-mobileLink">
-        <a class="nav-mobileLinkText">Login</a>
-      </li>    
-      <li class="nav-mobileLink">
-        <a class="nav-mobileLinkText">Signup</a>
-      </li>
-    </ul>
-  </div>
+  <% flash.each do |message_type, message| %>
+    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+  <% end %>
 
   <%= yield %>
 
