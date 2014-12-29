@@ -1,9 +1,10 @@
   <header class="banner"></header>
 
   <nav class="nav">
-    <a class='current' href="index.html">
+
+    <%= link_to root_path, class: "current" do %>
       <h1 class="nav-brand"></h1>
-    </a>
+    <% end %>
     <ul class="nav-links">
       <li class="nav-link">
         <%= link_to "Signup", signup_path, class: "nav-linkText" %>
