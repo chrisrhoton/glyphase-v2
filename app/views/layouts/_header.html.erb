@@ -17,7 +17,7 @@
   <div class="nav-mobile">
     <ul class="nav-mobileLinks">
       <li class="nav-mobileLink">
-        <a class="nav-mobileLinkText">Logout</a>
+        <%= link_to "Logout", logout_path, class: "nav-mobileLinkText", method: "delete" %>
       </li>
     </ul>
   </div>
@@ -41,10 +41,10 @@
   <div class="nav-mobile">
     <ul class="nav-mobileLinks">
       <li class="nav-mobileLink">
-        <a class="nav-mobileLinkText">Login</a>
+        <%= link_to "Login", login_path, class: "nav-mobileLinkText" %>
       </li>    
       <li class="nav-mobileLink">
-        <a class="nav-mobileLinkText">Signup</a>
+        <%= link_to "Signup", signup_path, class: "nav-mobileLinkText" %>
       </li>
     </ul>
   </div>
