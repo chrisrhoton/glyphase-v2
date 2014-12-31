@@ -42,6 +42,57 @@
   border: 2px solid #adb8c0 !important;
 }
 
+.gravatarSidebar {
+  position: relative;
+  height: 20vw;
+  width: 20vw;
+  border: 2px solid #ddddd9;
+  border-radius: 4px; 
+  background: image-url("prof.png") no-repeat center;
+}
+
+.gravatarSidebar .caption { 
+  position: absolute; 
+  width: 100%; 
+  height: 10%;
+  min-height: 2.5rem;
+  left: 0px; 
+  bottom: 0px;
+  color: #f7ca0a; 
+  background: black; 
+  text-align: center; 
+  font-weight: bold; 
+  opacity:0.7; 
+}
+
+.gravatarEdit {
+  font-weight: bold;
+  color: #f7ca0a;
+}
+
+@media screen and (max-width: 800px) {
+
+  .gravatarSidebar {
+    margin: auto;
+    min-height: 12.5rem;
+    min-width: 12.5rem;
+    width: 20vw; 
+  }
+
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddddd9;
+  }
+}
+
 /** Error messages **/
 
 #error_explanation {

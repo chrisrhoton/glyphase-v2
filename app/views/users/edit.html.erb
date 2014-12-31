@@ -1,12 +1,14 @@
-<% provide(:title, @user.username) %>
+<% provide(:title, 'Edit Profile') %>
 <section class="glyphHeader-create">
 </section>
 <section class="glyphSidebar">
   <div class="gravatarSidebar" style="background-image: url(<%= gravatar_url_for @user, size: 300 %>)">
     <div class="caption">
-      <%= @user.username %>
+      <a href="http://gravatar.com/emails" target=_blank class="gravatarEdit">edit</a>
     </div>
   </div>
 </section>
 <section class="glyphInfo">
+  <%= render "user_form" %>
 </section>
+

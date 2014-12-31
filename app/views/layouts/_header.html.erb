@@ -8,6 +8,9 @@
     <% end %>
     <ul class="nav-links">
       <li class="nav-link">
+        <%= link_to "Profile", edit_user_path(current_user), class: "nav-linkText" %>
+      </li>
+      <li class="nav-link">
         <%= link_to "Logout", logout_path, class: "nav-linkText", method: "delete" %>
       </li>
     </ul>
@@ -16,6 +19,9 @@
 
   <div class="nav-mobile">
     <ul class="nav-mobileLinks">
+      <li class="nav-mobileLink">
+        <%= link_to "Profile", edit_user_path(current_user), class: "nav-mobileLinkText" %>
+      </li>
       <li class="nav-mobileLink">
         <%= link_to "Logout", logout_path, class: "nav-mobileLinkText", method: "delete" %>
       </li>

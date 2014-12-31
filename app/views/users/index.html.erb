@@ -1,0 +1,20 @@
+<% provide(:title, 'All users') %>
+
+<section class="glyphHeader-create">
+</section>
+<section class="glyphSidebar">
+  <br>
+</section>
+<section class="glyphInfo">
+
+  <section class="glyphComments">
+    <h2 class="homeContent-tagline">Users</h2>
+    <%= will_paginate %>
+
+    <ul class="users">
+      <%= render @users %>
+    </ul>
+
+    <%= will_paginate %>
+  </section>
+</section>

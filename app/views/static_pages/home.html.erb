@@ -151,6 +151,10 @@
   <h2 class="homeContent-tagline">Glyphbase helps you explore new spots.</h2>
   <p class="homeContent-info">Skate ipsum dolor sit amet, airwalk launch ramp risers locals full pipe 50-50 slide Bonite. Coffin launch ramp nose darkslide Memory Screen slam quarter pipe full-cab.</p>
 
-  <span class="action-primary">Signup to Explore</span>
+  <% if !logged_in? %>
+    <%= link_to signup_path do %>
+      <span class="action-primary">Signup to Explore</span>
+    <% end %>
+  <% end %>
 
 </section>
