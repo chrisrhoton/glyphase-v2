@@ -1,0 +1,14 @@
+<% provide(:title, "Password Reset") %>
+<section class="homeContent">
+  <br>
+  <h2 class="homeContent-tagline">Password Reset</h2>
+  <%= form_for(:password_reset, url: password_resets_path, html: { class: 'login-form' }) do |f| %>
+
+    <%= f.email_field :email, class: 'input-text', placeholder: "Email" %>
+
+    <section class="action">
+      <%= f.submit "Submit", class: "action-primary" %>
+    </section>
+  <% end %>
+
+</section>
