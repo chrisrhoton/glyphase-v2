@@ -1,0 +1,30 @@
+<%= form_for @glyph, role: "form" do |f| %>
+<section class="glyphInfo create">
+  <%= render 'shared/error_messages', object: f.object %>
+  <header class="glyphInfo-text">
+    <%= f.text_field :title, class: "input-text--large", placeholder: "Glyph Title", required: true %>
+  </header>
+</section>
+
+<section class="glyphContent">
+  <span class="action-primary addHeader">Add Header Image</span>
+  <label class="input-label">Glyph Information</label>
+  <%= f.text_field :tagline, class: "input-text", placeholder: "What's the best part about this spot?", required: true %>
+  <%= f.text_area :content, class: "input-textbox", placeholder: "Give some details and things you think are important. You can also add photos and video.", required: true %>
+  <section class="input-textboxActions">
+    <i class="input-textboxAction--photo"></i>
+    <i class="input-textboxAction--video"></i>
+  </section>
+
+  <select class="input-dropdown">
+    <option value="Blah">Everyone</option>
+    <option value="Okay">Friends</option>
+  </select>
+  <span class="glyphInfo-dropdownText">can see this.</span>
+  <section class="action">
+    <span class="action-secondary" id="cancelComment">Cancel</span>
+    <%= f.submit class: "action-primary" %>
+  </section>
+
+</section>
+<% end %>

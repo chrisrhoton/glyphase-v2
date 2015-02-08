@@ -19,7 +19,7 @@ $gray-medium-light: #eaeaea;
   display: block;
   position: relative;
   margin-left: 5rem;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   width: 100%; }
 
 .glyphFeed-authorImage {
@@ -56,4 +56,27 @@ $gray-medium-light: #eaeaea;
 .glyphFeed-tagline {
   float: left;
   margin-top: 0;
-  padding-left: 1.25rem; }
+  margin-bottom: 30px;
+  padding-left: 1.25rem;
+  width: 100%; }
+
+.glyphFeed-Actions {
+  float: left;
+  margin-top: 0;
+  padding-left: 1.25rem;
+  position: absolute;
+  right: 60px;
+  bottom: 0;
+  text-align: right; }
+
+  .glyphFeed-Actions a {
+    opacity: 0.3;
+    font-size: 0.96154rem;
+    padding: .5em 1.2em;
+    transition: all .2s ease;
+    &:hover {
+      opacity: 1;
+      transition: all .2s ease;
+      cursor: pointer;
+    }
+  }

@@ -9,4 +9,11 @@
     Posted <%= time_ago_in_words(glyph.created_at) %> ago.
   </div>
   <p class="glyphFeed-tagline"><%= glyph.tagline %></p>
+  <div class="glyphFeed-Actions">
+    <% if current_user?(glyph.user) %>
+      <%= link_to "Edit", edit_glyph_path(glyph) %>
+      <%= link_to "Delete", glyph, method: :delete,
+                                   data: { confirm: "You sure?" } %>
+    <% end %>
+  </div>
 </li>

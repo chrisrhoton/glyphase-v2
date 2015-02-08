@@ -3,7 +3,6 @@ require 'test_helper'
 class GlyphTest < ActiveSupport::TestCase
   def setup
     @user = users(:chris)
-    # This code is not idiomatically correct.
     @glyph = @user.glyphs.build(content: "Lorem ipsum", 
                                 tagline: "Best for precisions",
                                 title: "Dope Spot", 
