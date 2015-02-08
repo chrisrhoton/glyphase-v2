@@ -1,0 +1,12 @@
+<li class="glyphFeed-item" data-id="<%= glyph.id %>">
+  <section class="glyphFeed-authorImage">
+    <img class="glyphFeed-Image" src="<%= gravatar_url_for @user, size: 300 %>">
+  </section>
+  <div class="glyphFeed-author">
+    <%= glyph.user.username %>
+  </div>
+  <div class="glyphFeed-timestamp">
+    Posted <%= time_ago_in_words(glyph.created_at) %> ago.
+  </div>
+  <p class="glyphFeed-tagline"><%= glyph.tagline %></p>
+</li>

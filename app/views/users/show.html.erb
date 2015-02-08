@@ -9,4 +9,13 @@
   </div>
 </section>
 <section class="glyphInfo">
+  <% if @user.glyphs.any? %>
+    <section class="glyphFeed">
+      <h4 class="glyphFeed-title">Glyphs (<%= @user.glyphs.count %>)</h4>
+      <ul class="glyphFeed-list">
+        <%= render @glyphs %>
+      </ul>
+      <%= will_paginate @glyphs %>
+    </section>
+  <% end %>
 </section>

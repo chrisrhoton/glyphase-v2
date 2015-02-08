@@ -11,4 +11,14 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
 
+  test "associated microposts should be destroyed" do
+    @user.save
+    @user.glyphs.create!(content: "Lorem ipsum",
+                         title: "Dope Site",
+                         tagline: "Cat's Delight")
+    assert_difference 'Glyph.count', -1 do
+      @user.destroy
+    end
+  end
+
 end

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :glyphs, dependent: :destroy
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   attr_accessor :remember_token, :activation_token, :reset_token

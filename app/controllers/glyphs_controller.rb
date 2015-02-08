@@ -1,0 +1,2 @@
+class GlyphsController < ApplicationController
+end

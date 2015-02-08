@@ -25,3 +25,13 @@ User.create!(username:  "chris",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  title   = Faker::Lorem.words.join(" ")
+  tagline = Faker::Lorem.words(5).join(" ")
+  content = Faker::Lorem.sentence(5)
+  users.each { |user| user.glyphs.create!(content: content, 
+                                          title: title, 
+                                          tagline: tagline) }
+end
