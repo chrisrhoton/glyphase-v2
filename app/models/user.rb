@@ -77,6 +77,10 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
 
+  def feed
+    Glyph.where("user_id = ?", id)
+  end
+
   private
 
     # Creates and assigns the activation token and digest

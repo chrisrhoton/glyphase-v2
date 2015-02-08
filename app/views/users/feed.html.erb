@@ -1,0 +1,21 @@
+<% provide(:title, @user.username) %>
+<section class="glyphHeader-create">
+</section>
+<section class="glyphSidebar">
+  <div class="gravatarSidebar" style="background-image: url(<%= gravatar_url_for @user, size: 300 %>)">
+    <div class="caption">
+      <%= @user.username %>
+    </div>
+  </div>
+</section>
+<section class="glyphInfo">
+  <% if @feed_items.any? %>
+    <section class="glyphFeed">
+      <h4 class="glyphFeed-title">The Latest</h4>
+      <ul class="glyphFeed-list">
+        <%= render @feed_items %>
+      </ul>
+      <%= will_paginate @feed_items %>
+    </section>
+  <% end %>
+</section>

@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
   # logged_in_user inherited from ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :feed]
+  before_action :correct_user,   only: [:edit, :update, :feed]
   before_action :admin_user,     only: [:index, :destroy]
 
   def index
     @users = User.paginate(page: params[:page])
+  end
+
+  def feed
+    @feed_items = current_user.feed.paginate(page: params[:page])
   end
 
   def new
