@@ -56,7 +56,7 @@ if (typeof jQuery === 'undefined') {
     if (e) e.preventDefault()
 
     if (!$parent.length) {
-      $parent = $this.closest('.alert')
+      $parent = $this.closest('.flash-alert')
     }
 
     $parent.trigger(e = $.Event('close.bs.alert'))
