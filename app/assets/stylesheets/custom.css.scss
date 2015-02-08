@@ -104,7 +104,7 @@
 }
 
 .field_with_errors {
-  .input-text {
+  .input-text, .input-textbox, .input-text--large {
     border-color: #ffaaaa;
     background-color: #f2dede;
   }
