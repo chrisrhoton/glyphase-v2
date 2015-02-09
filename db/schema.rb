@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207190216) do
+ActiveRecord::Schema.define(version: 20150208233808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,13 @@ ActiveRecord::Schema.define(version: 20150207190216) do
   create_table "glyphs", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
-    t.decimal  "latitude",   precision: 9, scale: 6
-    t.decimal  "longitude",  precision: 9, scale: 6
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.decimal  "latitude",         precision: 9, scale: 6
+    t.decimal  "longitude",        precision: 9, scale: 6
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.string   "tagline"
     t.string   "title"
+    t.string   "image_attachment"
   end
 
   add_index "glyphs", ["user_id", "created_at"], name: "index_glyphs_on_user_id_and_created_at", using: :btree

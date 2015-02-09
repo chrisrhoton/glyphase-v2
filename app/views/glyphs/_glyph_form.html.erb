@@ -1,4 +1,4 @@
-<%= form_for @glyph, role: "form" do |f| %>
+<%= form_for(@glyph, html: { multipart: true }, role: "form") do |f| %>
 <section class="glyphInfo create">
   <%= render 'shared/error_messages', object: f.object %>
   <header class="glyphInfo-text">
@@ -12,7 +12,11 @@
   <%= f.text_field :tagline, class: "input-text", placeholder: "What's the best part about this spot?", required: true %>
   <%= f.text_area :content, class: "input-textbox", placeholder: "Give some details and things you think are important. You can also add photos and video.", required: true %>
   <section class="input-textboxActions">
-    <i class="input-textboxAction--photo"></i>
+    <div class="input-textboxAction--photo">
+      <div class="fileButtonWrapper">
+        <%= f.file_field :image_attachment, accept: 'image/png,image/gif,image/jpeg' %>
+      </div>
+    </div>
     <i class="input-textboxAction--video"></i>
   </section>
 
@@ -28,3 +32,15 @@
 
 </section>
 <% end %>
+
+<script type="text/javascript">
+  $('#glyph_image_attachment').bind('change', function() {
+    size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+    if(this.files[0]) {
+      $(this).closest('.input-textboxAction--photo').addClass('has-file');
+    }
+  });
+</script>

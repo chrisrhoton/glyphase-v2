@@ -15,7 +15,10 @@
   </header>
   <div class="glyphHeader-like" id="like"></div>
   <h3 class="glyphInfo-heading"><%= @glyph.tagline %></h3>
-  <p class="glyphInfo-content"><%= @glyph.content %></p>
+  <div class="glyphInfo-content">
+    <p><%= @glyph.content %></p>
+    <%= image_tag @glyph.image_attachment.url if @glyph.image_attachment? %>
+  </div>
 
   <section class="glyphComments">
     <h4 class="glyphComments-title">Comments</h4>

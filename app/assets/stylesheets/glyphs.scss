@@ -1,3 +1,27 @@
 // Place all the styles related to the Glyphs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#glyph_image_attachment{
+  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.fileButtonWrapper {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    overflow: hidden;
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+.has-file {
+  opacity: 1 !important;
+}
