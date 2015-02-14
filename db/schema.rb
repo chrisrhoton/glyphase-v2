@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208233808) do
+ActiveRecord::Schema.define(version: 20150214204802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "glyph_id"
+    t.text     "text"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "image_attachment"
+  end
+
+  add_index "comments", ["glyph_id"], name: "index_comments_on_glyph_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "glyphs", force: :cascade do |t|
     t.text     "content"
@@ -52,5 +64,7 @@ ActiveRecord::Schema.define(version: 20150208233808) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "comments", "glyphs"
+  add_foreign_key "comments", "users"
   add_foreign_key "glyphs", "users"
 end

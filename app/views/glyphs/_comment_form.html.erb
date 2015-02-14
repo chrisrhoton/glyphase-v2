@@ -1,0 +1,28 @@
+<%= form_for [@glyph, @comment], html: { multipart: true }, role: "form" do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.text_area :text, class: "input-textbox", placeholder: "Omg this spot was sooo sick.", required: true%>
+  <section class="input-textboxActions">
+    <div class="input-textboxAction--photo">
+      <div class="fileButtonWrapper">
+        <%= f.file_field :image_attachment, accept: 'image/png,image/gif,image/jpeg' %>
+      </div>
+    </div>
+    <i class="input-textboxAction--video"></i>
+  </section>
+  <section class="action">
+    <span class="action-secondary" id="cancelComment">Cancel</span>
+    <%= f.submit class: "action-primary" %>
+  </section>
+<% end %>
+
+<script type="text/javascript">
+  $('#comment_image_attachment').bind('change', function() {
+    size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+    if(this.files[0]) {
+      $(this).closest('.input-textboxAction--photo').addClass('has-file');
+    }
+  });
+</script>

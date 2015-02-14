@@ -23,7 +23,8 @@ class GlyphsController < ApplicationController
   end
 
   def show
-    @glyph = Glyph.find(params[:id])
+    @glyph   = Glyph.find(params[:id])
+    @comment = Comment.new
   rescue ActiveRecord::RecordNotFound
     flash[:warning] = "Sorry, we couldn't find what you're looking for."
     redirect_to(root_url)

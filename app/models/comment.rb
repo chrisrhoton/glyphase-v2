@@ -1,16 +1,13 @@
-class Glyph < ActiveRecord::Base
+class Comment < ActiveRecord::Base
   belongs_to :user
-  has_many :comments, dependent: :destroy
-  default_scope -> { order(created_at: :desc) }
+  belongs_to :glyph
+  validates :text, presence: true
   mount_uploader :image_attachment, PictureUploader
   validates :user_id, presence: true
-  validates :content, presence: true
-  validates :tagline, presence: true, length: { maximum: 70 }
-  validates :title, presence: true, length: { maximum: 70 }
+  validates :glyph_id, presence: true
   validate  :image_size
 
   private
-
     # Validates the size of an uploaded picture.
     def image_size
       if image_attachment.size > 5.megabytes

@@ -5,7 +5,6 @@
   <div class="glyphSidebar-location">
     <div id="map-canvas" class="single"></div>
   </div>
-  <button class="button-secondary tip desktop">Tip the Creator</button>
 </section>
 
 <section class="glyphInfo">
@@ -13,7 +12,6 @@
     <h2 class="glyphInfo-textTitle"><%= @glyph.title %></h2>
     <span class="glyphInfo-textCreator">by <%= @glyph.user.username %></span>
   </header>
-  <div class="glyphHeader-like" id="like"></div>
   <h3 class="glyphInfo-heading"><%= @glyph.tagline %></h3>
   <div class="glyphInfo-content">
     <p><%= @glyph.content %></p>
@@ -22,17 +20,10 @@
 
   <section class="glyphComments">
     <h4 class="glyphComments-title">Comments</h4>
-    <ul class="glyphComments-list">
-      <li class="glyphComments-item">
-        <section class="glyphComments-authorImage"></section>
-        <aside class="glyphComments-author">Thomas Drach</aside>
-        <p class="glyphComments-content">Skate ipsum dolor sit amet, airwalk launch ramp risers locals full pipe 50-50 slide Bonite.Skate ipsum dolor sit amet, airwalk launch ramp risers locals full pipe 50-50 slide Bonite.</p>
-      </li>      
-      <li class="glyphComments-item">
-        <section class="glyphComments-authorImage"></section>
-        <aside class="glyphComments-author">Thomas Drach</aside>
-        <p class="glyphComments-content">Skate ipsum dolor sit amet, airwalk launch ramp risers locals.</p>
-      </li>
+    <ul class="glyphComments-list">   
+      <% if @glyph.comments.any? %>
+        <%= render @glyph.comments %>
+      <% end %>
     </ul>
 
     <!-- Pre-add State -->
@@ -43,20 +34,8 @@
     <!-- Add State -->
     <section class="glyphComments-adding">
       <h4 class="glyphComments-addPrompt">Adding Comment</h4>
-      <textarea class="input-textbox" placeholder="Omg this spot was sooo sick."></textarea>
-      <section class="input-textboxActions">
-        <i class="input-textboxAction--photo"></i>
-        <i class="input-textboxAction--video"></i>
-      </section>
-      <section class="action">
-        <span class="action-secondary" id="cancelComment">Cancel</span>
-        <span class="action-primary">Save</span>
-      </section>
+      <%= render "comment_form" %>
     </section>
-
-    <button class="button-secondary tip mobile">Tip the Creator</button>
-    
-    <span class="action-primary report">Report Location as Innaccurate</span>
 
   </section>
 
