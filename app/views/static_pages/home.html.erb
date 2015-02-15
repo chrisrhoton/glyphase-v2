@@ -7,6 +7,7 @@
         if(!initialized) {
           initialized = true;
           Glyphbase.Maps.initialize('map-canvas', 16, center);
+          Glyphbase.Glyphs.displayNearby(latitude, longitude);
         }
       });
     });

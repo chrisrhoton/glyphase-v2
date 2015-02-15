@@ -1,5 +1,5 @@
 class GlyphsController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_user, except: [:nearby]
   before_action :correct_user,   only: [:edit, :update, :destroy]
 
   def new
@@ -42,6 +42,13 @@ class GlyphsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def nearby
+    latitude = params[:lat]
+    longitude = params[:lng]
+    @glyphs = Glyph.close_to(latitude, longitude)
+    render json: @glyphs
   end
 
   private

@@ -902,6 +902,10 @@ sub {
   position: relative;
   text-align: center; }
 
+.glyph-infoWindow {
+  width: 300px;
+}
+
 .map-item {
   font-family: "pt-sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   position: absolute;
@@ -934,18 +938,21 @@ sub {
 .map-itemContent {
   font-family: "pt-sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   text-align: left;
-  margin-left: 35%;
   padding: 0.96154rem;
-  line-height: 1.6; }
+  padding-left: 35%;
+  line-height: 1.6;
+  width: 100%; }
 
 .map-itemTitle {
   font-size: 1.25rem;
-  font-weight: bold; }
+  font-weight: bold;
+  width: 100%; }
 
 .map-itemCreator {
   display: block;
   opacity: 0.5;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  width: 100%; }
 
 .map-itemInfo {
   display: block;
@@ -954,7 +961,8 @@ sub {
   position: relative;
   padding-left: 1.04167rem;
   color: #494947;
-  font-style: italic; }
+  font-style: italic;
+  width: 100%; }
   .map-itemInfo::before {
     content: "“";
     font-size: 2em;

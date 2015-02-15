@@ -9,6 +9,18 @@ class Glyph < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 70 }
   validate  :image_size
 
+  scope :close_to, -> (latitude, longitude, distance_in_meters = 2000) {
+    where(%{
+      ST_DWithin(
+        ST_GeographyFromText(
+          'SRID=4326;POINT(' || glyphs.longitude || ' ' || glyphs.latitude || ')'
+        ),
+        ST_GeographyFromText('SRID=4326;POINT(%f %f)'),
+        %d
+      )
+    } % [longitude, latitude, distance_in_meters])
+  }
+
   private
 
     # Validates the size of an uploaded picture.

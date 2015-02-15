@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214204802) do
+ActiveRecord::Schema.define(version: 20150215171742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -42,6 +43,13 @@ ActiveRecord::Schema.define(version: 20150214204802) do
 
   add_index "glyphs", ["user_id", "created_at"], name: "index_glyphs_on_user_id_and_created_at", using: :btree
   add_index "glyphs", ["user_id"], name: "index_glyphs_on_user_id", using: :btree
+
+  create_table "spatial_ref_sys", primary_key: "srid", force: :cascade do |t|
+    t.string  "auth_name", limit: 256
+    t.integer "auth_srid"
+    t.string  "srtext",    limit: 2048
+    t.string  "proj4text", limit: 2048
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

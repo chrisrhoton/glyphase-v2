@@ -2,6 +2,7 @@ window.Glyphbase = window.Glyphbase || {};
 window.Glyphbase.Maps = (function() {
 
   var map;
+  var lastSelectedMarker;
 
   function initialize(domElem, mapZoom, mapCenter) {
 
@@ -69,6 +70,33 @@ window.Glyphbase.Maps = (function() {
     return marker;
   };
 
+  function buildInfoWindow(glyph) {
+    console.log(glyph);
+    var template="<div class=\" glyph-infoWindow\">";
+        template += "<a class=\"map-link\" href=\"/glyphs/" + glyph.id + "\">";
+        template += "<aside class=\"map-itemImage\"><\/aside>";
+        template += "<section class=\"map-itemContent\">";
+        template += "<span class=\"map-itemTitle\">" + glyph.title + "<\/span>";
+        template += "<span class=\"map-itemCreator\">" + "Baller" + "<\/span>";
+        template += "<span class=\"map-itemInfo\">" + glyph.tagline + "<\/span>";
+        template += "<\/section>";
+        template += "<\/a>";
+        template += "<\/div>";
+    return template;
+
+  };
+
+  function addInfoWindowToMarker(marker, glyph) {
+    var infowindow = new google.maps.InfoWindow({
+        content: buildInfoWindow(glyph)
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+        if(lastSelectedMarker) lastSelectedMarker.close(); // Close last marker if one was opened
+        infowindow.open(map, this);
+        lastSelectedMarker = infowindow;
+    });
+  };
+
   function centerOnMarker(marker) {
     map.setCenter(marker.getPosition());
   };
@@ -76,6 +104,7 @@ window.Glyphbase.Maps = (function() {
   return {
     initialize:     initialize,
     addMarker:      addMarker,
-    centerOnMarker: centerOnMarker
+    centerOnMarker: centerOnMarker,
+    addInfoWindowToMarker: addInfoWindowToMarker
   };
 })();
