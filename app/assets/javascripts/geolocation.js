@@ -10,8 +10,7 @@ window.Glyphbase.Geo = (function() {
 
       navigator.geolocation.getCurrentPosition(
         function(position) {
-          if(!positionFound) { 
-            console.log("Position: ", position);
+          if(!positionFound) {
             positionFound = true;
             latitude  = position.coords.latitude;
             longitude = position.coords.longitude;
@@ -22,7 +21,6 @@ window.Glyphbase.Geo = (function() {
 
       navigator.geolocation.watchPosition(
         function(position) {
-          console.log("Better Position: ", position);
           positionFound = true;
           latitude  = position.coords.latitude;
           longitude = position.coords.longitude;
