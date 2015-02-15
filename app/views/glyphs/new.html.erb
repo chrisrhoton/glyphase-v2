@@ -9,8 +9,8 @@
   <section class="glyphSidebar-address">
     <span class="glyphSidebar-addressLabel">Location</span>
     <address class="glyphSidebar-addressContent">
-      <span class="label-inline">Lat</span> 37.4930984<br>
-      <span class="label-inline">Long</span> -122.393039<br>
+      <span class="label-inline">Lat</span> <span class="lat-inline"></span><br>
+      <span class="label-inline">Long</span> <span class="lng-inline"></span><br>
       <span class="label-inline">Near</span> In N Out<br>
     </address>
   </section>
@@ -21,5 +21,16 @@
 <script>
   $(document).ready(function() {
       Glyphbase.Maps.initialize();
+      Glyphbase.Geo.trackPosition( function(latitude, longitude) {
+        var $latText      = $('.lat-inline');
+        var $lngText      = $('.lng-inline');
+        var $latToServer  = $('#glyph_latitude');
+        var $lngToServer  = $('#glyph_longitude');
+
+        $latText.text(latitude.toFixed(4));
+        $lngText.text(longitude.toFixed(4));
+        $latToServer.val(latitude);
+        $lngToServer.val(longitude);
+      });
   });
 </script>

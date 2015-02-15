@@ -47,7 +47,8 @@ class GlyphsController < ApplicationController
   private
 
     def glyph_params
-      params.require(:glyph).permit(:content, :title, :tagline, :image_attachment)
+      params.require(:glyph)
+            .permit(:content, :title, :tagline, :image_attachment, :latitude, :longitude);
     end
 
     def correct_user

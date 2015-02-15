@@ -1,7 +1,10 @@
 <% provide(:title, 'Home') %>
   <script>
     $(document).ready(function() {
-        Glyphbase.Maps.initialize();
+      Glyphbase.Geo.trackPosition(function(latitude, longitude) {
+        var center = new google.maps.LatLng(latitude, longitude);
+        Glyphbase.Maps.initialize('map-canvas', 16, center);
+      });
     });
   </script>
 

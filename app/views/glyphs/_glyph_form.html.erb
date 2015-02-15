@@ -1,4 +1,6 @@
 <%= form_for(@glyph, html: { multipart: true }, role: "form") do |f| %>
+  <%= f.hidden_field :latitude, value: 0.0 %>
+  <%= f.hidden_field :longitude, value: 0.0 %>
 <section class="glyphInfo create">
   <%= render 'shared/error_messages', object: f.object %>
   <header class="glyphInfo-text">
