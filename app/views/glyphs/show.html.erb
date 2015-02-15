@@ -51,6 +51,9 @@
 
 <script>
   $(document).ready(function() {
-      Glyphbase.Maps.initialize();
+    var marker;
+    Glyphbase.Maps.initialize('map-canvas', 18);
+    marker = Glyphbase.Maps.addMarker(<%= @glyph.latitude.to_f %>, <%= @glyph.longitude.to_f %>);
+    Glyphbase.Maps.centerOnMarker(marker);
   });
 </script>
