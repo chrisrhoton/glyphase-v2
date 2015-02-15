@@ -20,17 +20,22 @@
 
 <script>
   $(document).ready(function() {
-      Glyphbase.Maps.initialize();
-      Glyphbase.Geo.trackPosition( function(latitude, longitude) {
-        var $latText      = $('.lat-inline');
-        var $lngText      = $('.lng-inline');
-        var $latToServer  = $('#glyph_latitude');
-        var $lngToServer  = $('#glyph_longitude');
+    var initialized = false;
+    Glyphbase.Geo.trackPosition( function(latitude, longitude) {
+      var $latText      = $('.lat-inline');
+      var $lngText      = $('.lng-inline');
+      var $latToServer  = $('#glyph_latitude');
+      var $lngToServer  = $('#glyph_longitude');
 
-        $latText.text(latitude.toFixed(4));
-        $lngText.text(longitude.toFixed(4));
-        $latToServer.val(latitude);
-        $lngToServer.val(longitude);
-      });
+      $latText.text(latitude.toFixed(4));
+      $lngText.text(longitude.toFixed(4));
+      $latToServer.val(latitude);
+      $lngToServer.val(longitude);
+      if(!initialized) {
+        var center = new google.maps.LatLng(latitude, longitude);
+        initialized = true;
+        Glyphbase.Maps.initialize('map-canvas', 16, center);
+      }
+    });
   });
 </script>
