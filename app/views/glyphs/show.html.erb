@@ -26,6 +26,7 @@
     <%= image_tag @glyph.image_attachment.url if @glyph.image_attachment? %>
   </div>
 
+<% if viewable?(@glyph) %>
   <section class="glyphComments">
     <h4 class="glyphComments-title">Comments</h4>
     <ul class="glyphComments-list">   
@@ -46,6 +47,7 @@
     </section>
 
   </section>
+<% end %>
 
 </section>
 

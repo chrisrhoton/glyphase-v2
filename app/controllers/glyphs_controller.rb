@@ -2,6 +2,8 @@ class GlyphsController < ApplicationController
   before_action :logged_in_user, except: [:nearby]
   before_action :correct_user,   only: [:edit, :update, :destroy]
 
+  NOT_VIEWABLE_MESSAGE = "You're not close enough or don't have the permissions necessary to view this glyph."
+
   def new
     @glyph = Glyph.new
   end
@@ -25,11 +27,15 @@ class GlyphsController < ApplicationController
   def show
     @glyph   = Glyph.find(params[:id])
     @comment = Comment.new
-    if close_enough?(@glyph)
-      puts "Close enough"
-    else
-      puts "Not close enough"
+    if close_enough?(@glyph) && !current_user?(@glyph.user) && !viewed_before?(@glyph)
+      @glyph.add_viewer!(current_user)
     end
+
+    if !viewable?(@glyph)
+      @glyph.image_attachment = nil
+      @glyph.content = NOT_VIEWABLE_MESSAGE
+    end
+    
   rescue ActiveRecord::RecordNotFound
     flash[:warning] = "Sorry, we couldn't find what you're looking for."
     redirect_to(root_url)

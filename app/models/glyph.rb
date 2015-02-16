@@ -1,6 +1,8 @@
 class Glyph < ActiveRecord::Base
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :view_relationships, dependent: :destroy
+  has_many :viewers, through: :view_relationships, source: :user
   default_scope -> { order(created_at: :desc) }
   mount_uploader :image_attachment, PictureUploader
   validates :user_id, presence: true
@@ -21,6 +23,10 @@ class Glyph < ActiveRecord::Base
       )
     } % [longitude, latitude, distance_in_meters])
   }
+
+  def add_viewer!(other_user)
+    view_relationships.create!(user_id: other_user.id)
+  end
 
   private
 

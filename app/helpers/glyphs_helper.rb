@@ -13,4 +13,12 @@ module GlyphsHelper
   def close_enough?(glyph)
     DEFAULT_PROXIMITY > glyph.distance_from([get_latitude, get_longitude])
   end
+
+  def viewable?(glyph)
+    current_user?(glyph.user) || viewed_before?(glyph) || close_enough?(glyph)
+  end
+
+  def viewed_before?(glyph)
+    @glyph.viewers.include?(current_user)
+  end
 end
