@@ -598,7 +598,8 @@ sub {
   display: block;
   position: relative;
   margin-left: 5rem;
-  width: 100%; }
+  margin-bottom: 2rem;
+  width: 80%; }
 
 .glyphComments-authorImage {
   width: 4.625rem;
@@ -611,16 +612,17 @@ sub {
 
 .glyphComments-author {
   float: left;
+  display: block;
   margin-bottom: 0;
   padding-left: 1.25rem;
   opacity: 0.3;
-  width: 100%; }
+  width: 100% }
 
 .glyphComments-content {
   float: left;
+  display: block;
   margin-top: 0;
   padding-left: 1.25rem;
-  width: 100%;
   overflow: scroll; }
 
 .glyphComments-add {

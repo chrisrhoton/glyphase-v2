@@ -1,10 +1,13 @@
 <li class="glyphComments-item">
-  <section class="glyphComments-authorImage"></section>
+  <section class="glyphComments-authorImage">
+    <img class="glyphFeed-Image" src="<%= gravatar_url_for comment.user, size: 300 %>">
+  </section>
   <aside class="glyphComments-author"><%= comment.user.username %></aside>
-  <p class="glyphComments-content">
+  <div class="glyphComments-content">
     <%= comment.text %>
+    <br>
     <%= image_tag comment.image_attachment.url if comment.image_attachment? %>
-  </p>
+  </div>
   <% if current_user?(comment.user) %>
     <div class="glyphComments-close">
       <%= link_to '&times;'.html_safe, 
