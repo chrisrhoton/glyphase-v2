@@ -75,9 +75,9 @@ window.Glyphbase.Maps = (function() {
     var template="";
         template += "<a class=\"map-link\" href=\"/glyphs/" + glyph.id + "\">";
         if(glyph.header_image.url) {
-          template += "<div class='map-itemImage'><img class='map-smallImage' src='" + glyph.header_image.url + "'><\/div>"
+          template += "<div class='map-itemImage' style='background: url(" + glyph.header_image.url + ") no-repeat center; background-size: cover;'><\/div>"
         } else {
-          template += "<div class='map-itemImage'><\/div>";
+          template += "<div class='map-itemImage' style=\"background: url(<%= asset_path 'parkour.jpg' %>) no-repeat center; background-size: cover;\"><\/div>";
         }
         template += "<section class=\"map-itemContent\">";
         template += "<span class=\"map-itemTitle\">" + glyph.title + "<\/span>";
