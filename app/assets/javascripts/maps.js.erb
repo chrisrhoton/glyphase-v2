@@ -4,7 +4,7 @@ window.Glyphbase.Maps = (function() {
   var map;
   var lastSelectedMarker;
 
-  function initialize(domElem, mapZoom, mapCenter) {
+  function initialize(domElem, mapZoom, mapCenter, draggable) {
 
     var zoom            = mapZoom || 16;
     var center          = mapCenter || new google.maps.LatLng(37.794108,-122.39511);
@@ -14,7 +14,7 @@ window.Glyphbase.Maps = (function() {
     var mapOptions = {
         disableDefaultUI: true,
         scrollwheel: false,
-        draggable: false,
+        draggable: draggable || false,
         center: center,
         zoom: zoom,
         mapTypeId: google.maps.MapTypeId.ROADMAP,

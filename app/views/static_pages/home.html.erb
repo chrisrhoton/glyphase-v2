@@ -6,7 +6,7 @@
         var center = new google.maps.LatLng(latitude, longitude);
         if(!initialized) {
           initialized = true;
-          Glyphbase.Maps.initialize('map-canvas', 16, center);
+          Glyphbase.Maps.initialize('map-canvas', 16, center, true);
           Glyphbase.Glyphs.displayNearby(latitude, longitude);
         }
       });
