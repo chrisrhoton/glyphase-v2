@@ -1,8 +1,8 @@
 # encoding: utf-8
 
-class PictureUploader < CarrierWave::Uploader::Base
+class HeaderUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  process resize_to_limit: [700, 700]
+  process resize_to_limit: [1920, 1080]
 
   if Rails.env.production?
     storage :fog

@@ -5,6 +5,7 @@ class Glyph < ActiveRecord::Base
   has_many :viewers, through: :view_relationships, source: :user
   default_scope -> { order(created_at: :desc) }
   mount_uploader :image_attachment, PictureUploader
+  mount_uploader :header_image, HeaderUploader
   validates :user_id, presence: true
   validates :content, presence: true
   validates :tagline, presence: true, length: { maximum: 70 }
@@ -34,6 +35,10 @@ class Glyph < ActiveRecord::Base
     def image_size
       if image_attachment.size > 5.megabytes
         errors.add(:image_attachment, "should be less than 5MB")
+      end
+
+      if header_image.size > 5.megabytes
+        errors.add(:header_image, "should be less than 5MB")
       end
     end
 end

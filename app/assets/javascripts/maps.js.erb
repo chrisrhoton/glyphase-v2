@@ -74,7 +74,11 @@ window.Glyphbase.Maps = (function() {
     console.log(glyph);
     var template="";
         template += "<a class=\"map-link\" href=\"/glyphs/" + glyph.id + "\">";
-        template += "<aside class=\"map-itemImage\"><\/aside>";
+        if(glyph.header_image.url) {
+          template += "<div class='map-itemImage'><img class='map-smallImage' src='" + glyph.header_image.url + "'><\/div>"
+        } else {
+          template += "<div class='map-itemImage'><\/div>";
+        }
         template += "<section class=\"map-itemContent\">";
         template += "<span class=\"map-itemTitle\">" + glyph.title + "<\/span>";
         // template += "<span class=\"map-itemCreator\">" + "author" + "<\/span>";

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216195311) do
+ActiveRecord::Schema.define(version: 20150216212438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150216195311) do
     t.string   "title"
     t.string   "image_attachment"
     t.string   "panda_video_id"
+    t.string   "header_image"
   end
 
   add_index "glyphs", ["user_id", "created_at"], name: "index_glyphs_on_user_id_and_created_at", using: :btree

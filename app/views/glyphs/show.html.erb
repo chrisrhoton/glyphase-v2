@@ -1,5 +1,5 @@
 <% provide(:title, @glyph.title) %>
-<section class="glyphHeader-image"></section>
+<section class="glyphHeader-image"><%= image_tag @glyph.header_image.url if @glyph.header_image? %></section>
 
 <section class="glyphSidebar">
   <div class="glyphSidebar-location">
