@@ -9,11 +9,30 @@
   <section class="glyphSidebar-address">
     <span class="glyphSidebar-addressLabel">Location</span>
     <address class="glyphSidebar-addressContent">
-      <span class="label-inline">Lat</span> 37.4930984<br>
-      <span class="label-inline">Long</span> -122.393039<br>
-      <span class="label-inline">Near</span> In N Out<br>
+      <span class="label-inline">Lat</span> <%= @glyph.latitude %><br>
+      <span class="label-inline">Long</span> <%= @glyph.longitude %><br>
     </address>
   </section>
 </section>
 
 <%= render "glyph_form" %>
+
+<script>
+  $(document).ready(function() {
+    var marker;
+
+    // This code is a quick patch for a problem passing the lat/long
+    // back when updating a glyph.  Lat/Long was not getting passed
+    // into the form correctly.  Need to investigate more, but below
+    // fixes it for now.
+      var $latToServer  = $('#glyph_latitude');
+      var $lngToServer  = $('#glyph_longitude');
+      $latToServer.val(<%= @glyph.latitude %>);
+      $lngToServer.val(<%= @glyph.longitude %>);
+    // End quick patch
+
+    Glyphbase.Maps.initialize('map-canvas', 18);
+    marker = Glyphbase.Maps.addMarker(<%= @glyph.latitude %>, <%= @glyph.longitude %>);
+    Glyphbase.Maps.centerOnMarker(marker);
+  });
+</script>

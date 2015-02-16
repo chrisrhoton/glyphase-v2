@@ -36,6 +36,8 @@ class GlyphsController < ApplicationController
 
   def update
     @glyph = Glyph.find(params[:id])
+    puts params[:glyph][:latitude]
+    puts params[:glyph][:longitude]
     if @glyph.update_attributes(glyph_params)
       flash[:success] = "Glyph updated"
       redirect_to @glyph
