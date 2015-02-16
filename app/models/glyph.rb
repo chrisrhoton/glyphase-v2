@@ -8,6 +8,7 @@ class Glyph < ActiveRecord::Base
   validates :tagline, presence: true, length: { maximum: 70 }
   validates :title, presence: true, length: { maximum: 70 }
   validate  :image_size
+  reverse_geocoded_by :latitude, :longitude
 
   scope :close_to, -> (latitude, longitude, distance_in_meters = 2000) {
     where(%{

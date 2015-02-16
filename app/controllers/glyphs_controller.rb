@@ -25,6 +25,11 @@ class GlyphsController < ApplicationController
   def show
     @glyph   = Glyph.find(params[:id])
     @comment = Comment.new
+    if close_enough?(@glyph)
+      puts "Close enough"
+    else
+      puts "Not close enough"
+    end
   rescue ActiveRecord::RecordNotFound
     flash[:warning] = "Sorry, we couldn't find what you're looking for."
     redirect_to(root_url)
