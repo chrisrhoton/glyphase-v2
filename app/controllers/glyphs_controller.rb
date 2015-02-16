@@ -47,8 +47,12 @@ class GlyphsController < ApplicationController
   def nearby
     latitude = params[:lat]
     longitude = params[:lng]
-    @glyphs = Glyph.close_to(latitude, longitude)
-    render json: @glyphs
+    if(latitude.nil? || longitude.nil?)
+      redirect_to root_url 
+    else
+      @glyphs = Glyph.close_to(latitude, longitude)
+      render json: @glyphs
+    end
   end
 
   private
