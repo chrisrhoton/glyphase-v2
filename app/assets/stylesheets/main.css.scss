@@ -902,10 +902,6 @@ sub {
   position: relative;
   text-align: center; }
 
-.glyph-infoWindow {
-  width: 300px;
-}
-
 .map-item {
   font-family: "pt-sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   position: absolute;
@@ -938,7 +934,7 @@ sub {
 .map-itemContent {
   font-family: "pt-sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   text-align: left;
-  padding: 0.96154rem;
+  padding: 0.5rem;
   padding-left: 35%;
   line-height: 1.6;
   width: 100%; }

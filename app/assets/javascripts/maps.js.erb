@@ -72,28 +72,45 @@ window.Glyphbase.Maps = (function() {
 
   function buildInfoWindow(glyph) {
     console.log(glyph);
-    var template="<div class=\" glyph-infoWindow\">";
+    var template="";
         template += "<a class=\"map-link\" href=\"/glyphs/" + glyph.id + "\">";
         template += "<aside class=\"map-itemImage\"><\/aside>";
         template += "<section class=\"map-itemContent\">";
         template += "<span class=\"map-itemTitle\">" + glyph.title + "<\/span>";
-        template += "<span class=\"map-itemCreator\">" + "Baller" + "<\/span>";
+        // template += "<span class=\"map-itemCreator\">" + "author" + "<\/span>";
         template += "<span class=\"map-itemInfo\">" + glyph.tagline + "<\/span>";
         template += "<\/section>";
         template += "<\/a>";
-        template += "<\/div>";
     return template;
 
   };
 
   function addInfoWindowToMarker(marker, glyph) {
-    var infowindow = new google.maps.InfoWindow({
-        content: buildInfoWindow(glyph)
+    var infoBubble = new InfoBubble({
+      map: map,
+      content: buildInfoWindow(glyph),
+      position: marker.getPosition(),
+      shadowStyle: 1,
+      padding: 0,
+      backgroundColor: '#fff',
+      borderRadius: 5,
+      arrowSize: 15,
+      borderWidth: 1,
+      borderColor: '#ccc',
+      disableAutoPan: false,
+      hideCloseButton: false,
+      maxWidth: 350,
+      minWidth: 350,
+      maxHeight: 110,
+      minHeight: 110,
+      arrowPosition: 50,
+      backgroundClassName: 'transparent',
+      arrowStyle: 0
     });
     google.maps.event.addListener(marker, 'click', function() {
         if(lastSelectedMarker) lastSelectedMarker.close(); // Close last marker if one was opened
-        infowindow.open(map, this);
-        lastSelectedMarker = infowindow;
+        infoBubble.open(map, this);
+        lastSelectedMarker = infoBubble;
     });
   };
 
