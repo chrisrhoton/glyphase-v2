@@ -16,7 +16,7 @@
   <section class="input-textboxActions">
     <div class="input-textboxAction--photo">
       <div class="fileButtonWrapper">
-        <%= f.file_field :image_attachment, accept: 'image/png,image/gif,image/jpeg' %>
+        <%= f.file_field :image_attachment, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
       </div>
     </div>
     <i class="input-textboxAction--video"></i>
@@ -43,7 +43,7 @@
     }
     if(this.files[0]) {
       $(this).closest('.input-textboxAction--photo').addClass('has-file');
-      $("#glyph_image_attachment").prop('disabled', true);
+      // $("#glyph_image_attachment").prop('disabled', true);
     }
   });
 </script>
