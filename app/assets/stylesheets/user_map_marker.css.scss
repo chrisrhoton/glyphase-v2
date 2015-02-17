@@ -72,7 +72,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
   display:none;
 }
 /* compensate for iPhone and Android devices with high DPI, add iPad media query */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (device-width: 768px) {
+@media screen and (max-width: 800px) {
   #map-canvas div.gmnoprint[title="You are here"] {
     margin:-10px 0 0 -10px !important;
   }
