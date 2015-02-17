@@ -588,6 +588,10 @@ sub {
 .glyphInfo-content {
   max-width: 40rem; }
 
+.glyphInfo-content > img {
+  max-width: 200px;
+  max-height: 200px; }
+
 .glyphComments {
   max-width: 40rem; }
 

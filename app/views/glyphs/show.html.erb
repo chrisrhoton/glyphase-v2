@@ -23,7 +23,9 @@
   <h3 class="glyphInfo-heading"><%= @glyph.tagline %></h3>
   <div class="glyphInfo-content">
     <p><%= @glyph.content %></p>
-    <%= image_tag @glyph.image_attachment.url if @glyph.image_attachment? %>
+    <% if @glyph.image_attachment? %>
+      <a href="<%= @glyph.image_attachment.url %>" data-lightbox="glyph-image"><%= image_tag @glyph.image_attachment.url, class: "glyph-Lightbox" %></a>
+    <% end %>
   </div>
 
 <% if viewable?(@glyph) %>

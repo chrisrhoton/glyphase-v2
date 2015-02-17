@@ -6,7 +6,9 @@
   <div class="glyphComments-content">
     <%= comment.text %>
     <br>
-    <%= image_tag comment.image_attachment.url if comment.image_attachment? %>
+    <% if comment.image_attachment? %>
+      <a href="<%= comment.image_attachment.url %>" data-lightbox="glyph-image"><%= image_tag comment.image_attachment.url, class: "glyph-Lightbox" %></a>
+    <% end %>
   </div>
   <% if current_user?(comment.user) %>
     <div class="glyphComments-close">
