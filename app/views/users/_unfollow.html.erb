@@ -2,5 +2,5 @@
                          .find_by(followed_id: @user.id),
                          html: { method: :delete },
                          remote: true) do |f| %>
-  <%= f.submit "Unfollow", class: "button-secondary tip" %>
+  <%= f.submit "Unfollow", class: "button-secondary tip unfollow" %>
 <% end %>

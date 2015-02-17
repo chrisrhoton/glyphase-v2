@@ -1,14 +1,16 @@
 <li class="glyphFeed-item" data-id="<%= glyph.id %>">
   <section class="glyphFeed-authorImage">
-    <img class="glyphFeed-Image" src="<%= gravatar_url_for @user, size: 300 %>">
+    <%= link_to(glyph.user) do %>
+    <img class="glyphFeed-Image" src="<%= gravatar_url_for glyph.user, size: 300 %>">
+    <% end %>
   </section>
   <div class="glyphFeed-author">
-    <%= glyph.user.username %>
+    <%= link_to glyph.user.username, glyph.user %>
   </div>
   <div class="glyphFeed-timestamp">
     Posted <%= time_ago_in_words(glyph.created_at) %> ago.
   </div>
-  <p class="glyphFeed-tagline"><%= glyph.tagline %></p>
+  <p class="glyphFeed-tagline"><%= link_to glyph.tagline, glyph %></p>
   <div class="glyphFeed-Actions">
     <% if current_user?(glyph.user) %>
       <%= link_to "Edit", edit_glyph_path(glyph) %>
