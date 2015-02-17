@@ -824,6 +824,10 @@ sub {
   .glyphInfo-text {
     color: #494947; }
 
+  .glyphInfo-textCreator a {
+    color: #494947 !important;
+  }
+
   .glyphHeader-like {
     background: image-url("like-dark.svg") no-repeat center;
     background-size: 1rem;
