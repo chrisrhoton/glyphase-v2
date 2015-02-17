@@ -51,8 +51,8 @@
   display:none;
 }
 /* compensate for iPhone and Android devices with high DPI, add iPad media query */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (device-width: 768px) {
+/*@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (device-width: 768px) {
   #map-canvas div.gmnoprint[title="You are here"] {
     margin:-10px 0 0 -10px;
   }
-}
+}*/
