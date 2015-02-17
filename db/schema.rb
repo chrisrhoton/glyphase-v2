@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216212438) do
+ActiveRecord::Schema.define(version: 20150217043726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20150216212438) do
 
   add_index "comments", ["glyph_id"], name: "index_comments_on_glyph_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "follow_relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "follow_relationships", ["followed_id"], name: "index_follow_relationships_on_followed_id", using: :btree
+  add_index "follow_relationships", ["follower_id", "followed_id"], name: "index_follow_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
+  add_index "follow_relationships", ["follower_id"], name: "index_follow_relationships_on_follower_id", using: :btree
 
   create_table "glyphs", force: :cascade do |t|
     t.text     "content"
