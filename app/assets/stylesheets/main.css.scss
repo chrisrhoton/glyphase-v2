@@ -577,6 +577,10 @@ sub {
 .glyphInfo-textCreator {
   opacity: 0.3; }
 
+.glyphInfo-textCreator a {
+  color: white !important;
+}
+
 .glyphInfo-heading {
   margin-top: 3.125rem;
   max-width: 40rem; }
