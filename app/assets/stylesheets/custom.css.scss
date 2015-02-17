@@ -1,14 +1,22 @@
 /** Lightbox images **/
 
-.glyph-Lightbox {
-  max-width: 400px;
-  max-height: 400px;
+.glyph-Lightbox, .glyph-Lightbox-small {
   border: 1px solid #ddddd9;
   border-radius: 5px;
 }
 
-.glyph-Lightbox:hover {
+.glyph-Lightbox:hover, .glyph-Lightbox-small:hover {
   border: 1px solid #aaa;
+}
+
+.glyph-Lightbox {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.glyph-Lightbox-small {
+  max-width: 200px;
+  max-height: 200px;
 }
 
 /** Link styling **/
