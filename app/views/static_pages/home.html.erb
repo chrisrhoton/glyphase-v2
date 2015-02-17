@@ -8,6 +8,9 @@
           initialized = true;
           Glyphbase.Maps.initialize('map-canvas', 16, center, true);
           Glyphbase.Glyphs.displayNearby(latitude, longitude);
+          Glyphbase.Maps.addUserMarker(latitude, longitude);
+        } else {
+          Glyphbase.Maps.updateUserPosition(latitude, longitude);
         }
       });
     });

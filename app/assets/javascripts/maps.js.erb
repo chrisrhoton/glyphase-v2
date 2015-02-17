@@ -2,7 +2,9 @@ window.Glyphbase = window.Glyphbase || {};
 window.Glyphbase.Maps = (function() {
 
   var map;
+  var userMarker;
   var lastSelectedMarker;
+  var markers = [];
 
   function initialize(domElem, mapZoom, mapCenter, draggable) {
 
@@ -70,6 +72,32 @@ window.Glyphbase.Maps = (function() {
     return marker;
   };
 
+  function addUserMarker(latitude, longitude) {
+    var markerTitle = 'I might be here';
+    var image = {
+        url: "<%= asset_path 'bluedot.png' %>",
+        size: null, // size
+        origin: null, // origin
+        anchor: null, // anchor (move to center of marker)
+        scaledSize: new google.maps.Size( 17, 17 ) // scaled size (required for Retina display icon)
+    };
+    userMarker = new google.maps.Marker({
+        flat: true,
+        map:       map,
+        title:     markerTitle,
+        position:  new google.maps.LatLng(latitude, longitude),
+        icon: image,
+        optimized: false,
+        visible: true
+    });
+    return userMarker;
+  };
+
+  function updateUserPosition(latitude, longitude) {
+    if(!userMarker) return addUserMarker(latitude, longitude);
+    userMarker.setPosition(new google.maps.LatLng(latitude, longitude));
+  }
+
   function buildInfoWindow(glyph) {
     console.log(glyph);
     var template="";
@@ -126,6 +154,8 @@ window.Glyphbase.Maps = (function() {
     initialize:     initialize,
     addMarker:      addMarker,
     centerOnMarker: centerOnMarker,
-    addInfoWindowToMarker: addInfoWindowToMarker
+    addInfoWindowToMarker: addInfoWindowToMarker,
+    addUserMarker: addUserMarker,
+    updateUserPosition: updateUserPosition
   };
 })();
