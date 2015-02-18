@@ -14,8 +14,8 @@ User.create!(username:  "chris",
              activated: true,
              activated_at: Time.zone.now)
 
-99.times do |n|
-  username  = Faker::Internet.user_name
+30.times do |n|
+  username  = Faker::Internet.user_name + rand(100).to_s
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(username:              username,

@@ -35,19 +35,22 @@
       var $lngToServer  = $('#glyph_longitude');
       var marker;
 
-      $latText.text(latitude.toFixed(4));
-      $lngText.text(longitude.toFixed(4));
-      $latToServer.val(latitude);
-      $lngToServer.val(longitude);
       if(!initialized) {
+        $latText.text(latitude.toFixed(4));
+        $lngText.text(longitude.toFixed(4));
+        $latToServer.val(latitude);
+        $lngToServer.val(longitude);
         var center = new google.maps.LatLng(latitude, longitude);
         initialized = true;
         Glyphbase.Maps.initialize('map-canvas', 18, center);
-        marker = Glyphbase.Maps.addMarker(latitude, longitude);
+        marker = Glyphbase.Maps.addMarker(latitude, longitude, "Glyph", true);
         Glyphbase.Maps.centerOnMarker(marker);
-      } else if (marker) {
-        marker.setPosition(new google.maps.LatLng(latitude, longitude));
-        Glyphbase.Maps.centerOnMarker(marker);
+        Glyphbase.Maps.trackMarker(marker, function(newLatitude, newLongitude) {
+          $latText.text(newLatitude.toFixed(4));
+          $lngText.text(newLongitude.toFixed(4));
+          $latToServer.val(newLatitude);
+          $lngToServer.val(newLongitude);
+        })
       }
     });
   });

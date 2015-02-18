@@ -59,14 +59,22 @@ window.Glyphbase.Maps = (function() {
 
   }
 
-  function addMarker(latitude, longitude, title) {
+  function addMarker(latitude, longitude, title, draggable) {
     var markerTitle = title || "Glyph";
+    var image = {
+        url: "<%= asset_path 'mapLocation.svg' %>",
+        size: null, // size
+        origin: null, // origin
+        anchor: null, // anchor (move to center of marker)
+        scaledSize: null // scaled size (required for Retina display icon)
+    };
     var marker = new google.maps.Marker({
         map:       map,
         animation: google.maps.Animation.DROP,
         title:     markerTitle,
         position:  new google.maps.LatLng(latitude, longitude),
-        icon: "<%= asset_path 'mapLocation.svg' %>",
+        icon: image,
+        draggable: draggable || false,
         optimized: false 
     });
     return marker;
@@ -92,6 +100,13 @@ window.Glyphbase.Maps = (function() {
     });
     return userMarker;
   };
+
+  function trackMarker(marker, callback) {
+    google.maps.event.addListener(marker, 'dragend', function() {
+      var markerPosition = marker.getPosition();
+      callback(markerPosition.lat(), markerPosition.lng());
+    });
+  }
 
   function updateUserPosition(latitude, longitude) {
     if(!userMarker) return addUserMarker(latitude, longitude);
@@ -156,6 +171,7 @@ window.Glyphbase.Maps = (function() {
     centerOnMarker: centerOnMarker,
     addInfoWindowToMarker: addInfoWindowToMarker,
     addUserMarker: addUserMarker,
-    updateUserPosition: updateUserPosition
+    updateUserPosition: updateUserPosition,
+    trackMarker: trackMarker
   };
 })();
