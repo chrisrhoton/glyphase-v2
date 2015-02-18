@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20150218191728) do
     t.string   "tagline"
     t.string   "title"
     t.string   "image_attachment"
-    t.string   "panda_video_id"
     t.string   "header_image"
   end
 
@@ -85,15 +84,6 @@ ActiveRecord::Schema.define(version: 20150218191728) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
-  create_table "videos", force: :cascade do |t|
-    t.string   "panda_video_id"
-    t.integer  "glyph_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  add_index "videos", ["glyph_id"], name: "index_videos_on_glyph_id", using: :btree
-
   create_table "view_relationships", force: :cascade do |t|
     t.integer "user_id",  null: false
     t.integer "glyph_id", null: false
@@ -104,5 +94,4 @@ ActiveRecord::Schema.define(version: 20150218191728) do
   add_foreign_key "comments", "glyphs"
   add_foreign_key "comments", "users"
   add_foreign_key "glyphs", "users"
-  add_foreign_key "videos", "glyphs"
 end
