@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217043726) do
+ActiveRecord::Schema.define(version: 20150218191728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,7 +85,16 @@ ActiveRecord::Schema.define(version: 20150217043726) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
-  create_table "view_relationships", id: false, force: :cascade do |t|
+  create_table "videos", force: :cascade do |t|
+    t.string   "panda_video_id"
+    t.integer  "glyph_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "videos", ["glyph_id"], name: "index_videos_on_glyph_id", using: :btree
+
+  create_table "view_relationships", force: :cascade do |t|
     t.integer "user_id",  null: false
     t.integer "glyph_id", null: false
   end
@@ -95,4 +104,5 @@ ActiveRecord::Schema.define(version: 20150217043726) do
   add_foreign_key "comments", "glyphs"
   add_foreign_key "comments", "users"
   add_foreign_key "glyphs", "users"
+  add_foreign_key "videos", "glyphs"
 end
