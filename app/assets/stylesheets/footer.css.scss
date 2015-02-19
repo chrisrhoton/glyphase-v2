@@ -1,0 +1,123 @@
+.clear {
+    clear: both;
+}
+
+footer {
+  display: block;
+  float: left;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  background-color: #2E3639;
+  z-index: 1;
+  margin-top: 150px;
+}
+
+footer .bar {
+/*  background-color: #1E2629;*/
+/*  background-color: #2F373B;*/
+  background-color: #494947;
+  padding: 20px 0;
+}
+footer .bar-wrap {
+  font-size: 12px;
+  margin: 0 auto;
+  max-width: 1200px;
+  position: relative;
+  width: 95%;
+}
+.links {
+  float: left;
+  list-style: none outside none;
+  position: relative;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.links li {
+  float: left;
+  margin-right: 10px;
+}
+.links a {
+  color: #778888;
+}
+.links a:hover {
+  color: #FFFFFF;
+}
+
+.social {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.social a {
+  color: #778888;
+  margin-left: 20px;
+}
+.social a:hover {
+  color: #FFFFFF;
+}
+.social .icon {
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.social .info {
+  display: inline-block;
+  vertical-align: middle;
+}
+.social .info .follow {
+  display: block;
+}
+.social .info .num {
+  display: block;
+}
+
+.fb .fa {
+  font-size: 2rem;
+}
+a.fb {
+  margin-left: 0;
+}
+.tw .fa {
+  font-size: 2rem;
+}
+.copyright {
+  color: #778888;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 1000px){
+  .links, .social, .copyright{
+      float:none;
+      text-align:center;
+  }
+  .social {
+      position:relative;
+      margin:10px 0;
+  }
+  .links li {
+      display:inline-block;
+      float:none;
+  }
+  .bar {
+      position:relative;
+  }
+  .bar-wrap {
+      margin-bottom:0;
+  }
+}
+
+@media screen and (max-width: 835px)  {
+  footer > ul li {
+      float:none;
+      width:auto;
+  }
+}
+
+@media screen and (max-width: 768px)  {
+  .links li {
+      margin-right:5px;
+  }
+}
