@@ -1,0 +1,63 @@
+<% provide(:title, "About") %>
+<section class="glyphHeader-image"></section>
+
+<section class="glyphSidebar">
+  <div class="glyphSidebar-location">
+    <div id="map-canvas" class="single">
+      <div class="spinner small-top-padding">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+    </div>
+  </div>
+  <section class="glyphSidebar-address">
+    <span class="glyphSidebar-addressLabel">Location</span>
+    <address class="glyphSidebar-addressContent">
+      <span class="label-inline">Lat</span> <span class="lat-inline">37.795547</span><br>
+      <span class="label-inline">Long</span> <span class="lng-inline">-122.393528</span><br>
+      <span class="label-inline">Near</span> San Francisco, CA<br>
+      <span class="label-inline">Date</span> 20 February 2014<br>
+    </address>
+  </section>
+</section>
+
+<section class="glyphInfo">
+  <header class="glyphInfo-text">
+    <h2 class="glyphInfo-textTitle">About</h2>
+    <span class="glyphInfo-textCreator">by chris</span>
+  </header>
+  <h3 class="glyphInfo-heading">So what is this thing?</h3>
+  <div class="glyphInfo-content">
+    <p>Glyphbase takes a different approach to the traditional social networking paradigm.  Facebook, Twitter, and others have done tremendous work facilitating conversations between people around the world, many of whom have/will never meet in person.  We believe those networks provide important tools for staying in touch, getting to know others, and even shaping public discourse, especially across great distances.</p>
+
+    <p>But we also believe that standing in the same place someone else stood, seeing what they saw, is meaningful.  The physical locations where we play, live, and work provide important context to our conversations and experiences.  Glyphbase wants to reflect that fact by tying social interactions to physical spaces.  We allow users to attach digital data to the world around them and make it accessible only to those who make their way to the location where the glyph was created.</p>
+  </div>
+  <h3 class="glyphInfo-heading">So what can I do with Glyphbase?</h3>
+  <div class="glyphInfo-content">
+    <p>That's really up to you, and we're anxious to see how people use the service.  We've talked to a lot of people in the parkour/skateboarding communities who want to use Glyphbase to mark sites where they can practice and play.  By tying videos to the locations where they were filmed, Glyphbase facilitates what we call "conversation through movement."</p>
+
+     <p>But we also imagine others using our platform to share little known facts about sites in their local communities, develop treasure hunts, or city walking tours.  As a writer, I want to experiment with a new style of blogging, tying all my posts to spots I love all around the Bay Area.  I think the approach will create a unique relationship between me, the author, and anyone who reads what I write.  I'm anxious to try it out.</p>
+
+     <p>Author Neil Gaiman encouraged people to "Make good art."  That's what we hope you'll do with Glyphbase.  We don't want to define the kind of art you make; we just want to give you the tools to make it.</p>
+     <blockquote>
+      <p>“Go and make interesting mistakes, make amazing mistakes, make glorious and fantastic mistakes. Break rules. Leave the world more interesting for your being here.”  
+      <br>
+      <div class="quotable">
+        <span class="quote-author">--Neil Gaiman</span>, <span class="quote-citation">Make Good Art</span>
+      </div>
+      </p>
+     </blockquote>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function() {
+    var marker;
+    Glyphbase.Maps.initialize('map-canvas', 16);
+    marker = Glyphbase.Maps.addMarker(37.795547, -122.393528);
+    Glyphbase.Maps.centerOnMarker(marker);
+  });
+</script>

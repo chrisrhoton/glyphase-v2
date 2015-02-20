@@ -130,3 +130,22 @@
     background-color: #f2dede;
   }
 }
+
+blockquote {
+  font-style: italic;
+  text-align: justify;
+}
+
+.quotable {
+  text-align: right;
+}
+
+.quote-author {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.quote-citation {
+  font-weight: bold;
+  font-style: italic;
+}
