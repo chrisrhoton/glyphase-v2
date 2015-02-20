@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219192311) do
+ActiveRecord::Schema.define(version: 20150220141246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,9 +21,10 @@ ActiveRecord::Schema.define(version: 20150219192311) do
     t.integer  "user_id"
     t.integer  "glyph_id"
     t.text     "text"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "image_attachment"
+    t.string   "panda_video_id",   default: ""
   end
 
   add_index "comments", ["glyph_id"], name: "index_comments_on_glyph_id", using: :btree

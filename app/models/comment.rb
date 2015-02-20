@@ -7,6 +7,10 @@ class Comment < ActiveRecord::Base
   validates :glyph_id, presence: true
   validate  :image_size
 
+  def panda_video
+    @panda_video ||= Panda::Video.find(panda_video_id)
+  end
+
   private
     # Validates the size of an uploaded picture.
     def image_size

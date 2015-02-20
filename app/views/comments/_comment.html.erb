@@ -11,6 +11,15 @@
     <% if comment.image_attachment? %>
       <a href="<%= comment.image_attachment.url %>" data-lightbox="glyph-image"><%= image_tag comment.image_attachment.url, class: "glyph-Lightbox-small" %></a>
     <% end %>
+    <% unless comment.panda_video_id.empty? %>
+      <% if comment.panda_video.encodings["h264"].status == "success" %>
+        <video id="movie" width="<%= comment.panda_video.encodings["h264"].width %>" height="<%= comment.panda_video.encodings["h264"].height %>" preload="none" poster="<%= comment.panda_video.encodings["h264"].screenshots.first %>" controls>
+          <source src="<%= comment.panda_video.encodings["h264"].url %>" type="video/mp4">
+        </video>
+      <% else %>
+        <p>We're still processing your video.  Check back in a few minutes.</p>
+      <% end %>
+    <% end %>
   </div>
   <% if current_user?(comment.user) %>
     <div class="glyphComments-close">

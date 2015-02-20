@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comment).permit(:text, :image_attachment)
+      params.require(:comment).permit(:text, :image_attachment, :panda_video_id)
     end
 
     # Confirms the correct user.
