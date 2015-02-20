@@ -26,6 +26,11 @@
     <% if @glyph.image_attachment? %>
       <a href="<%= @glyph.image_attachment.url %>" data-lightbox="glyph-image"><%= image_tag @glyph.image_attachment.url, class: "glyph-Lightbox" %></a>
     <% end %>
+    <% unless @glyph.panda_video_id.empty? %>
+      <video id="movie" width="<%= @h264_encoding.width %>" height="<%= @h264_encoding.height %>" preload="none" poster="<%= @h264_encoding.screenshots.first %>" controls>
+        <source src="<%= @h264_encoding.url %>" type="video/mp4">
+      </video>
+    <% end %>
   </div>
 
 <% if viewable?(@glyph) %>

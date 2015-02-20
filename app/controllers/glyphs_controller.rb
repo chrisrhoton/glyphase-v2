@@ -27,11 +27,17 @@ class GlyphsController < ApplicationController
   def show
     @glyph   = Glyph.find(params[:id])
     @comment = Comment.new
+    viewable = viewable?(@glyph)
     if close_enough?(@glyph) && !current_user?(@glyph.user) && !viewed_before?(@glyph)
       @glyph.add_viewer!(current_user)
     end
 
-    if !viewable?(@glyph)
+    if viewable && !@glyph.panda_video_id.empty?
+      @original_video = @glyph.panda_video
+      @h264_encoding = @original_video.encodings["h264"]
+    end
+
+    if !viewable
       @glyph.image_attachment = nil
       @glyph.content = NOT_VIEWABLE_MESSAGE
     end
@@ -74,7 +80,7 @@ class GlyphsController < ApplicationController
       params.require(:glyph)
             .permit(:content, :title, :tagline, 
                     :image_attachment, :header_image,
-                    :latitude, :longitude);
+                    :latitude, :longitude, :panda_video_id);
     end
 
     def correct_user

@@ -37,4 +37,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  ENV['PANDASTREAM_URL'] = "https://ed66821e76ac17af3f26:c5a3a2aa2b16a71d0684@api.pandastream.com/3858ec60318679df93f791f13a2cb810"
 end

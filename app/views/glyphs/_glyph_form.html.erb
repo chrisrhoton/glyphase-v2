@@ -1,6 +1,7 @@
 <%= form_for(@glyph, html: { multipart: true }, role: "form") do |f| %>
   <%= f.hidden_field :latitude, value: 0.0 %>
   <%= f.hidden_field :longitude, value: 0.0 %>
+  <%= f.hidden_field :panda_video_id %>
 <section class="glyphInfo create">
   <%= render 'shared/error_messages', object: f.object %>
   <header class="glyphInfo-text">
@@ -24,7 +25,8 @@
         <%= f.file_field :image_attachment, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
       </div>
     </div>
-<!--     <i class="input-textboxAction--video"></i> -->
+    <i id="panda-button" class="input-textboxAction--video"></i>
+    <span id="progress-bar"></span>
   </section>
 
   <select class="input-dropdown">
@@ -40,6 +42,7 @@
 </section>
 <% end %>
 
+<script src="//cdn.pandastream.com/u/2.3/panda-uploader.min.js"></script>
 <script type="text/javascript">
   $('#glyph_image_attachment').bind('change', function() {
     size_in_megabytes = this.files[0].size/1024/1024;
@@ -58,6 +61,24 @@
     }
     if(this.files[0]) {
       $('.addHeader').css('border-color', '#494947');
+    }
+  });
+
+  var upl = panda.uploader.init({
+    'buttonId': 'panda-button',
+    'fileDropId': "file-drop",
+    'onQueue': function(files) {
+      $('#progress-bar').text("One moment. Uploading...");
+    },
+    'onProgress': function(file, percent) {
+      $('#progress-bar').text(percent + "%");
+    },
+    'onSuccess': function(file, data) {
+      $("#glyph_panda_video_id").val(data.id)
+      $('#progress-bar').text("Done: " + data.original_filename);
+    },
+    'onComplete': function(){
+      console.log("Complete!");
     }
   });
 </script>

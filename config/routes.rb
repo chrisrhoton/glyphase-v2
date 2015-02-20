@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/users/:id/feed' => 'users#feed', as: 'feed'
   get '/nearby'         => 'glyphs#nearby', as: 'nearby', defaults: {format: :json}
 
+  match "/panda/authorize_upload", :to => "panda#authorize_upload", via: :post
+
   resources :users do
     member do
       get :following, :followers

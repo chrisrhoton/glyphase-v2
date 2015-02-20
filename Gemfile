@@ -18,6 +18,7 @@ gem 'jbuilder',                '2.2.3'
 gem 'sdoc',                    '0.4.0', group: :doc
 gem 'pg',                      '0.17.1'
 gem 'geocoder',                '1.2.7'
+gem 'panda',                   '~> 1.6.0'
 
 group :development, :test do
   gem 'byebug',      '3.4.0'

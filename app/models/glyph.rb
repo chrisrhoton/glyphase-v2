@@ -29,6 +29,10 @@ class Glyph < ActiveRecord::Base
     view_relationships.create!(user_id: other_user.id)
   end
 
+  def panda_video
+    @panda_video ||= Panda::Video.find(panda_video_id)
+  end
+
   private
 
     # Validates the size of an uploaded picture.
