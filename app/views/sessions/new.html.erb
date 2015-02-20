@@ -1,7 +1,6 @@
 <% provide(:title, "Log in") %>
 <section class="homeContent">
-  <br>
-  <h2 class="homeContent-tagline">Log In</h2>
+  <h2 class="homeContent-taglineForms">Log In</h2>
   <%= form_for(:session, url: login_path, html: { class: 'login-form' }) do |f| %>
 
     <%= f.email_field :email, class: 'input-text', placeholder: "Email" %>

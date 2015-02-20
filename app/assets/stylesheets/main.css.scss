@@ -683,10 +683,14 @@ sub {
   margin: auto;
   text-align: center; }
 
-.homeContent-tagline {
+.homeContent-tagline, .homeContent-taglineForms {
   opacity: 0;
   transition: all .5s ease;
   opacity: 1; }
+
+.homeContent-taglineForms {
+  margin-top: 70px;
+}
 
 .icon-photo {
   background: image-url("photo.svg") no-repeat center;
